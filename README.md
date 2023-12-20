@@ -19,5 +19,18 @@ This Docker image runs a simple Node.js application that displays "Hello World" 
 
 5. Access the application in your web browser at http://localhost:8080.
 
-
-
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('code').forEach(function(element) {
+    element.addEventListener('click', function() {
+      const textArea = document.createElement('textarea');
+      textArea.value = element.innerText;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      alert('Command copied to clipboard!');
+    });
+  });
+});
+</script>
